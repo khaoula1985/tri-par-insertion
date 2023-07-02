@@ -1,0 +1,28 @@
+ALGORITHM insertion
+VAR 
+set1: ARRAY[] OF INTEGER;
+i,j,n,valeur: INTEGER;
+
+BEGIN
+   write ('Write your set length');
+   read (n);
+   n:=Length(set1);
+  
+REPEAT
+       FOR i FROM 0 to n-1 STEP 1 DO 
+           WRITE ('write your set of elements');
+           READ (set1[i]);
+       END FOR
+UNTIL (set1<>['']);
+
+ FOR i FROM 1 TO n STEP 1 DO 
+       valeur:=set1[i] 
+       j=i-1;
+       WHILE ((j>=0) AND (set1[j]>valeur)) DO
+       set1[j+1]=set[j];
+       j:=j-1;
+       set1[j+1]:=valeur;
+       END WHILE
+ END FOR
+ WRITE ('THE RESULT IS  =' set1);          
+END
